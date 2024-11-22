@@ -1,4 +1,12 @@
-import { Component, inject } from '@angular/core';
+import {
+  Component,
+  Host,
+  HostAttributeToken,
+  Inject,
+  inject,
+  Optional,
+  SkipSelf,
+} from '@angular/core';
 import { EmojiService } from '../emoji.service';
 import { CommonModule } from '@angular/common';
 
@@ -6,10 +14,21 @@ import { CommonModule } from '@angular/common';
   selector: 'app-custom',
   imports: [CommonModule],
   templateUrl: './custom.component.html',
-  styleUrl: './custom.component.scss'
+  styleUrl: './custom.component.scss',
 })
 export class CustomComponent {
 
-  public emoji = inject(EmojiService,{ optional:true })
+  constructor(
+    @Inject('TEST_VIEW_PROVIDER')
+    @Optional()
+    @Host()
+    valorNoViewProviders?: string,
 
+    @Inject('TESTE_PROVIDER')
+    @Optional()
+    valorNoProviders?: string
+  ) {
+    console.log(valorNoViewProviders);
+    console.log(valorNoProviders);
+  }
 }

@@ -7,7 +7,8 @@ import { CustomComponent } from './custom/custom.component';
   selector: 'app-root',
   imports: [RouterOutlet, ParentComponent, CustomComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  viewProviders: [{ provide: 'TEST_VIEW_PROVIDER', useValue: 'testeee' }],
 })
 export class AppComponent {
   title = 'test-provider';

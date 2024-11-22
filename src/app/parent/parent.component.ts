@@ -6,7 +6,9 @@ import { EmojiService } from '../emoji.service';
   imports: [],
   templateUrl: './parent.component.html',
   styleUrl: './parent.component.scss',
-  providers:[EmojiService],
-  // viewProviders: [{ provide: EmojiService, useValue: '👪' }],
+  // providers:[{provide:EmojiService, useValue:'valor do provider'}, {
+  //   provide:'TESTE_PROVIDER', useValue:'teste do provider'
+  // }],
+  // viewProviders: [{ provide: 'TEST_VIEW_PROVIDER', useValue: 'testeee' }],
 })
 export class ParentComponent {}
